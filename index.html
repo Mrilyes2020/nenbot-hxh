@@ -392,8 +392,8 @@ function formatBot(text) {
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.+?)\*/g, '<em>$1</em>')
-        .replace(/^[\-•] (.+)$/gm, '<li>$1</li>')
-        .replace(/^(\d+)\. (.+)$/gm, '<li>$1. $2</li>')
+        .replace(/^[\-•\*]\s+(.+)$/gm, '<li>$1</li>')
+        .replace(/^(\d+)\.\s+(.+)$/gm, '<li>$1. $2</li>')
         .replace(/\n/g, '<br>');
     // Wrap consecutive <li> in <ul>
     html = html.replace(/((?:<li>.+?<\/li>(?:<br>)?)+)/g, '<ul>$1</ul>');
@@ -415,7 +415,7 @@ function addMsg(text, type) {
     row.innerHTML = `
         <div class="msg-avatar">${type === 'bot' ? '⚡' : '👤'}</div>
         <div class="msg-body">
-            <div class="msg-bubble">${content}</div>
+            <div class="msg-bubble" dir="auto">${content}</div>
             <div class="msg-time">${getTime()}</div>
         </div>
     `;
@@ -430,7 +430,7 @@ function addMsgHTML(html, type) {
     row.innerHTML = `
         <div class="msg-avatar">${type === 'bot' ? '⚡' : '👤'}</div>
         <div class="msg-body">
-            <div class="msg-bubble">${html}</div>
+            <div class="msg-bubble" dir="auto">${html}</div>
             <div class="msg-time">${getTime()}</div>
         </div>
     `;
