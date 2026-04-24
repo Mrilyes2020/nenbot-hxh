@@ -330,10 +330,12 @@ const sessionId = localStorage.getItem('nenbot_sid') || crypto.randomUUID();
 localStorage.setItem('nenbot_sid', sessionId);
 let ttsOn = true;
 
-// ===== TEAM DATA (UPDATE THIS!) =====
+// ===== TEAM DATA =====
 const team = [
-    { name: "Full Name 1", level: "3rd Year Bachelor", age: "22", uni: "University Name", field: "Computer Science" },
-    { name: "Full Name 2", level: "3rd Year Bachelor", age: "21", uni: "University Name", field: "Computer Science" }
+    { name: "Ilyes Badreddine Rahmouni", level: "3rd-Year Bachelor's", age: "21", uni: "University of M'Sila", field: "Applied Mathematics" },
+    { name: "Toumi Khalil", level: "3rd-Year Bachelor's", age: "21", uni: "University of M'Sila", field: "Applied Mathematics" },
+    { name: "Hammadi Nada", level: "3rd-Year Bachelor's", age: "21", uni: "University of M'Sila", field: "Applied Mathematics" },
+    { name: "Saoudi Samah", level: "3rd-Year Bachelor's", age: "21", uni: "University of M'Sila", field: "Applied Mathematics" }
 ];
 
 // Render team cards
